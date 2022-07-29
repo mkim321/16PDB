@@ -1,4 +1,4 @@
-import { StyleSheet, View, ImageBackground } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import { ThemeProvider, Text } from "react-native-elements";
 
