@@ -6,8 +6,8 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator} from '@react-navigation/native-stack'
 
-//import { useFonts } from 'expo-font';
-// import { Montserrat_500Medium, Montserrat_600SemiBold } from '@expo-google-fonts/montserrat';
+import { useFonts } from 'expo-font';
+import { Montserrat_500Medium, Montserrat_600SemiBold } from '@expo-google-fonts/montserrat';
 
 import HomeScreen from './screens/HomeScreen';
 // import TypeScreen from './screens/TypeScreen';
@@ -17,14 +17,19 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
 
-  // // conditional to show a spinner while the font is loading
-  // if (!fontsLoaded) {
-  //   return (
-  //     <View style={styles.loadingContainer}>
-  //       <ActivityIndicator size='large' color='#b9c8ff' />
-  //     </View>
-  //   );
-  // }
+  let [fontsLoaded] = useFonts({
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+  });
+
+  // conditional to show a spinner while the font is loading
+  if (!fontsLoaded) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator size='large' color='#b9c8ff' />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaProvider>
