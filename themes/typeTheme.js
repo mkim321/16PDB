@@ -10,6 +10,16 @@ const themePalette = {
 
 export const typeTheme = {
     Text: {
+        h2Style:{
+            fontFamily: 'Montserrat_600SemiBold',
+            fontSize: 22,
+            lineHeight: 27,
+            marginBottom: 16,
+            marginTop: 36,
+            textAlign: 'center',
+            color: '#372F3A',
+            textTransform: 'uppercase'
+        },
         style:{
             color: themePalette.green,
             fontWeight: 'normal',
