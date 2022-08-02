@@ -10,6 +10,7 @@ import { useFonts } from 'expo-font';
 import { Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_800ExtraBold } from '@expo-google-fonts/montserrat';
 
 import HomeScreen from './screens/HomeScreen';
+import TypeScreen from './screens/TypeScreen';
 // import TypeScreen from './screens/TypeScreen';
 
 
@@ -45,6 +46,11 @@ export default function App() {
           <Stack.Screen
             name="Home"
             component={HomeScreen}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="Type"
+            component={TypeScreen}
             options={{ headerShown: true }}
           />
         </Stack.Navigator>

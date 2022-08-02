@@ -18,7 +18,8 @@ export default function HomeScreen({ navigation }) {
                 <Text h2>Personality Group Types</Text>
                 <View style={styles.btngrid}>
                     <View style={styles.row}>
-                        <TouchableOpacity style ={styles.imgbtn}>
+                        <TouchableOpacity style ={styles.imgbtn}
+                        onPress={() => navigation.navigate('Type')}>
                             <Image
                             style={styles.imagebtn}
                             source={require('../assets/img/home-analyst.png')}/>
