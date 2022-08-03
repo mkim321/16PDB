@@ -10,8 +10,9 @@ import { useFonts } from 'expo-font';
 import { Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_800ExtraBold } from '@expo-google-fonts/montserrat';
 
 import HomeScreen from './screens/HomeScreen';
+import OnboardingScreen from './screens/OnboardingScreen';
 import TypeScreen from './screens/TypeScreen';
-// import TypeScreen from './screens/TypeScreen';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -36,13 +37,19 @@ export default function App() {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home" 
+        <Stack.Navigator 
+          initialRouteName="Onboarding" 
           screenOptions={{
             headerTitleStyle: {
               fontWeight: 'normal',
               fontFamily: 'Montserrat_500Medium',
             }
           }}>
+          <Stack.Screen
+            name="Onboarding"
+            component={OnboardingScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
