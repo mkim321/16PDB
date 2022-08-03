@@ -72,7 +72,8 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       paddingHorizontal: 25,
-      backgroundColor: '#fff'
+      backgroundColor: '#fff',
+      paddingBottom: 10,
     },
     input:{
         fontFamily: 'Montserrat_500Medium',
@@ -119,5 +120,4 @@ const styles = StyleSheet.create({
     accordionbannertitle: {
         color:'#000',
     }
-
   });
