@@ -19,27 +19,30 @@ export default function HomeScreen({ navigation }) {
                 <View style={styles.btngrid}>
                     <View style={styles.row}>
                         <TouchableOpacity style ={styles.imgbtn}
-                        onPress={() => navigation.navigate('Type')}>
+                        onPress={() => navigation.navigate('Analyst')}>
                             <Image
                             style={styles.imagebtn}
-                            source={require('../assets/img/home-analyst.png')}/>
+                            source={require('../assets/card/home-analyst.png')}/>
                         </TouchableOpacity>
-                        <TouchableOpacity style ={styles.imgbtn}>
+                        <TouchableOpacity style ={styles.imgbtn}
+                        onPress={() => navigation.navigate('Diplomat')}>
                             <Image
                             style={styles.imagebtn}
-                            source={require('../assets/img/home-diplomat.png')}/>
+                            source={require('../assets/card/home-diplomat.png')}/>
                         </TouchableOpacity>
                     </View>
                     <View style={styles.row}>
-                        <TouchableOpacity style ={styles.imgbtn}>
+                        <TouchableOpacity style ={styles.imgbtn}
+                        onPress={() => navigation.navigate('Sentinel')}>
                             <Image
                             style={styles.imagebtn}
-                            source={require('../assets/img/home-sentinel.png')}/>
+                            source={require('../assets/card/home-sentinel.png')}/>
                         </TouchableOpacity>
-                        <TouchableOpacity style ={styles.imgbtn}>
+                        <TouchableOpacity style ={styles.imgbtn}
+                        onPress={() => navigation.navigate('Explorer')}>
                             <Image
                             style={styles.imagebtn}
-                            source={require('../assets/img/home-explorer.png')}/>
+                            source={require('../assets/card/home-explorer.png')}/>
                         </TouchableOpacity>
                     </View>
                 </View>

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { StyleSheet, View, TouchableOpacity, Image, ScrollView, TextInput } from "react-native";
 import { ThemeProvider, Text } from "react-native-elements";
@@ -6,7 +6,7 @@ import { List } from 'react-native-paper';
 
 import { typeTheme } from "../themes/typeTheme";
 
-export default function TypeScreen({ navigation }) {
+export default function DetailScreen({ navigation }) {
     const [text, onChangeText] = React.useState("Search for a personality");
     const [expanded, setExpanded] = React.useState(true);
     const handlePress = () => setExpanded(!expanded);
@@ -26,12 +26,12 @@ export default function TypeScreen({ navigation }) {
                             <TouchableOpacity style ={styles.imgbtn}>
                                 <Image
                                 style={styles.imagebtn}
-                                source={require('../assets/img/home-analyst.png')}/>
+                                source={require('../assets/card/home-analyst.png')}/>
                             </TouchableOpacity>
                             <TouchableOpacity style ={styles.imgbtn}>
                                 <Image
                                 style={styles.imagebtn}
-                                source={require('../assets/img/home-diplomat.png')}/>
+                                source={require('../assets/card/home-diplomat.png')}/>
                             </TouchableOpacity>
                         </View>
                         
