@@ -11,6 +11,8 @@ import { Montserrat_500Medium, Montserrat_600SemiBold } from '@expo-google-fonts
 
 import HomeScreen from './screens/HomeScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
+import OnboardingTwoScreen from './screens/OnboardingTwoScreen';
+import OnboardingThreeScreen from './screens/OnboardingThreeScreen';
 // import TypeScreen from './screens/TypeScreen';
 
 
@@ -46,6 +48,16 @@ export default function App() {
           <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OnboardingTwo"
+            component={OnboardingTwoScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OnboardingThree"
+            component={OnboardingThreeScreen}
             options={{ headerShown: false }}
           />
           <Stack.Screen
