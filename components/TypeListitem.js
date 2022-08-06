@@ -9,7 +9,7 @@ export default function TypeListItem({ itemData, navigatorRef}) {
     return(
         <ListItem>
             <TouchableOpacity style ={styles.imgbtn}
-                onPress={() => navigatorRef.navigate('Detail')}>
+                onPress={() => navigatorRef.navigate('Detail', {detailId: itemData.id})}>
                 <View style={styles.container}>
                     <View style={styles.headingView}>
                         <Text style={styles.title}>{itemData.type}</Text>

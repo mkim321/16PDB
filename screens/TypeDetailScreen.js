@@ -1,71 +1,92 @@
 import React, { useState, useEffect } from 'react';
 
-import { StyleSheet, View, TouchableOpacity, Image, ScrollView, TextInput } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image, ScrollView, TextInput, ActivityIndicator } from "react-native";
 import { ThemeProvider, Text } from "react-native-elements";
-import { List } from 'react-native-paper';
+
+import TypeDetailContainer from '../components/TypeDetailContainer';
 
 import { typeTheme } from "../themes/typeTheme";
 
-export default function DetailScreen({ navigation }) {
+export default function DetailScreen({ route, navigation }) {
+    // get the params from the route
+    const { detailId } = route.params;
+
+    // add a useState for the search process
     const [text, onChangeText] = React.useState("Search for a personality");
-    const [expanded, setExpanded] = React.useState(true);
-    const handlePress = () => setExpanded(!expanded);
+
+    // add the three useState for the fetch process
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [dataResult, setDataResult] = useState([]);
+
+    // add useEffect for the fetch process
+    useEffect(() => {
+        fetch('https://16pdbapiimg.misunkim.ca/classes/read.php?id=' + detailId)
+        .then(res => res.json())
+        .then(
+            (result) => {
+            setIsLoaded(true);
+            setDataResult(result);
+            },
+            // Note: it's important to handle errors here
+            // instead of a catch() block so that we don't swallow
+            // exceptions from actual bugs in components.
+            (error) => {
+            setIsLoaded(true);
+            setError(error);
+            }
+        )
+    }, []);
 
     return(    
         <ThemeProvider theme={typeTheme}>
             <ScrollView>
                 <View style={styles.container}>
-                <TextInput
-                    style={styles.input}
-                    onChangeText={onChangeText}
-                    value={text}
-                />
+                    <TextInput
+                        style={styles.input}
+                        onChangeText={onChangeText}
+                        value={text}
+                    />
                     <Text h2>OverView</Text>
-                    <View style={styles.btngrid}>
-                        <View style={styles.row}>
-                            <TouchableOpacity style ={styles.imgbtn}>
-                                <Image
-                                style={styles.imagebtn}
-                                source={require('../assets/card/home-analyst.png')}/>
-                            </TouchableOpacity>
-                            <TouchableOpacity style ={styles.imgbtn}>
-                                <Image
-                                style={styles.imagebtn}
-                                source={require('../assets/card/home-diplomat.png')}/>
-                            </TouchableOpacity>
-                        </View>
-                        
-                    </View>
-                    <List.Section title="" style={styles.accordlist}>
-                        <List.Accordion title="Introduction" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                        <List.Accordion title="Strengths" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                        <List.Accordion title="Weakness" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                        <List.Accordion title="Relationships" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                        <List.Accordion title="Friendships" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                        <List.Accordion title="Strengths" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
-                            <List.Item title="An Architect (INTJ) is a person with introverted, intuitive, thinking, and judging personality traits. They love perfecting the details in life, applying creativity and rationality to everything they do. They love to make their own discoveries, find better ways of doing things, and aren't afraid to break the rules or risk disapproval - as a matter of fact, they enjoy it." titleNumberOfLines={10}>
-                            </List.Item>
-                        </List.Accordion>
-                    </List.Section>
+                    {displayData(error, isLoaded, dataResult, navigation)}
                 </View>
             </ScrollView>
         </ThemeProvider>
     );
+}
+
+function displayData(error, isLoaded, dataResult, navigation) {
+    if (error) {
+        // show an error message    
+        return (
+        <View>
+            <Text>Error: {error.message}</Text>
+        </View>
+        );
+    }
+    else if (!isLoaded) {
+        // show the ActivityIndicator (spinner)
+        return (
+        <View>
+            <Text>Loading...</Text>
+            <ActivityIndicator size="large" color="#00ff00" />
+        </View>
+        );
+    }
+    else if (dataResult.personality === undefined) {
+        // not an error but no resorts, so show a message
+        return (
+        <View>
+            <Text>No records found for search</Text>
+        </View>
+        );
+    }
+    else {
+        // show the data in the FlatList
+        return(
+            <TypeDetailContainer currType={dataResult.personality[0]} navigatorRef={navigation} />
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -85,39 +106,4 @@ const styles = StyleSheet.create({
         marginTop:24,
         marginBottom: 36
     },
-    btngrid:{
-        // position:'absolute',
-        flex: 1,
-        flexWrap: 'wrap',
-    },
-    row:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'space-between',
-    },
-    imgbtn:{        
-        width: 160,
-        height: 210,
-        marginBottom:20,
-    },
-    btn: {
-        color: '#372F3A',
-        fontFamily: 'Montserrat_500Medium',
-        marginBottom: 20,
-    },
-    imagebtn: {
-        width:160,
-        height: 210
-    },
-    accordlist:{
-        backgroundColor: '#fff'
-    },
-    accordionbanner:{
-        backgroundColor: '#CFBFD6',
-        borderRadius: 10,
-        marginBottom: 10
-    },
-    accordionbannertitle: {
-        color:'#000',
-    }
   });
