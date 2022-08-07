@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { StyleSheet, View, TouchableOpacity, Image} from "react-native";
+import { StyleSheet, View, Image} from "react-native";
 import { ThemeProvider, Text } from "react-native-elements";
 import { List } from 'react-native-paper';
 
@@ -15,25 +15,14 @@ export default function TypeDetailContainer({ currType, navigatorRef}){
         <ThemeProvider theme={typeTheme}>
             <View style={styles.container}>
                 <View style={styles.btngrid}>
-                    <View style={styles.row}>
-                        <View style={styles.imgcontainer}>
-                            <View style={styles.headingView}>
-                                <Text style={styles.title}>{currType.type}</Text>
-                            </View>
-                            <Image
-                            style={styles.imagebtn}
-                            source={{uri:currType.imgurl}}/>
+                    <View style={styles.imgcontainer}>
+                        <View style={styles.headingView}>
+                            <Text style={styles.title}>{currType.type}</Text>
                         </View>
-                        <View style={styles.imgcontainer}>
-                            <View style={styles.headingView}>
-                                <Text style={styles.title}>{currType.type}</Text>
-                            </View>
-                            <Image
-                            style={styles.imagebtn}
-                            source={{uri:currType.imgurl}}/>
-                        </View>
+                        <Image
+                        style={styles.imagebtn}
+                        source={{uri:currType.imgurl}}/>
                     </View>
-                    
                 </View>
                 <List.Section title="" style={styles.accordlist}>
                     <List.Accordion title="Introduction" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
@@ -88,11 +77,6 @@ const styles = StyleSheet.create({
         flex: 1,
         flexWrap: 'wrap',
     },
-    row:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'space-between',
-    },
     imagebtn: {
         width:160,
         height: 210
@@ -103,11 +87,12 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         backgroundColor: 'transparent',
         width:160,
-        height: 210
+        height: 210,
     },
     headingView:{
         position:'absolute',
         zIndex:10,
+        width: 160,
         top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'
     },
     title:{

@@ -18,8 +18,7 @@ export const typeTheme = {
             textAlign: 'center',
             color: themePalette.textGray,
             textTransform: 'uppercase',
-            marginBottom: 20,
-        
+            marginBottom: 10,
         },
         style:{
             color: themePalette.green,

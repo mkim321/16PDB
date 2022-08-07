@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { StyleSheet, View, TouchableOpacity, Image, Button, TextInput } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Image, TextInput, Linking } from "react-native";
 import { ThemeProvider, Text } from "react-native-elements";
 
 import { typeTheme } from "../themes/typeTheme";
@@ -47,8 +47,11 @@ export default function HomeScreen({ navigation }) {
                     </View>
                 </View>
             <Text h2>Take The Test</Text>
-            <Button style={styles.btn} title='Official 16 Personality Test' color='#D6E9E1'></Button>
-
+            <TouchableOpacity
+                style={styles.btn}
+                onPress={() => Linking.openURL('https://www.16personalities.com/')}>
+                <Text style={styles.btntxt}>Official 16 Personality Test</Text>
+            </TouchableOpacity>
             </View>
         </ThemeProvider>
     );
@@ -85,14 +88,20 @@ const styles = StyleSheet.create({
         height: 210,
         marginBottom:20,
     },
-    btn: {
-        color: '#372F3A',
-        fontFamily: 'Montserrat_500Medium',
+    btn: { 
+        backgroundColor: '#D6E9E1',
         marginBottom: 20,
+        paddingVertical: 14,
+        borderRadius: 10,
     },
+    btntxt:{
+        textAlign: 'center',
+        color: '#000',
+        fontFamily: 'Montserrat_500Medium',
+        fontSize: 20
+    },  
     imagebtn: {
         width:160,
         height: 210
     }
-
   });

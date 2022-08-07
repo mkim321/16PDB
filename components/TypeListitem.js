@@ -4,7 +4,6 @@ import { ListItem, Text } from 'react-native-elements'
 export default function TypeListItem({ itemData, navigatorRef}) {
 
     //const imgsource = '../assets/card' + itemData.type + '.png';
-    
 
     return(
         <ListItem>

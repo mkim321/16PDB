@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { StyleSheet, View, Button, TextInput, FlatList, ActivityIndicator } from "react-native";
+import { StyleSheet, View, TextInput, FlatList, ActivityIndicator, Linking, TouchableOpacity } from "react-native";
 import { ThemeProvider, Text } from "react-native-elements";
 
 import TypeListItem from '../components/TypeListitem';
@@ -46,7 +46,11 @@ export default function AnalystScreen({ navigation }) {
                 <Text h2>Personality Group Types</Text>
                 {displayDataContainer(error, isLoaded, dataResult, navigation)}
             <Text h2>Take The Test</Text>
-            <Button style={styles.btn} title='Official 16 Personality Test' color='#D6E9E1'></Button>
+            <TouchableOpacity
+                style={styles.btn}
+                onPress={() => Linking.openURL('https://www.16personalities.com/')}>
+                <Text style={styles.btntxt}>Official 16 Personality Test</Text>
+            </TouchableOpacity>
             </View>
         </ThemeProvider>
     );
@@ -112,5 +116,17 @@ const styles = StyleSheet.create({
         borderRadius:30,
         marginTop:24,
         marginBottom: 36
+    },
+    btn: { 
+        backgroundColor: '#D6E9E1',
+        marginBottom: 20,
+        paddingVertical: 14,
+        borderRadius: 10,
+    },
+    btntxt:{
+        textAlign: 'center',
+        color: '#000',
+        fontFamily: 'Montserrat_500Medium',
+        fontSize: 20
     },
   });
