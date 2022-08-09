@@ -49,11 +49,10 @@ const styles = StyleSheet.create({
         marginTop: 50,
     },
     skipBtn: {
-        size: 16,
+        fontSize: 16,
         fontFamily: 'Montserrat_500Medium',
         marginTop: 50,
-        marginLeft: 160,
-        color: 'rgba(39, 39, 39, 0.7)',
+        marginLeft: 120,
     },
     mainImage: {
         aspectRatio: 1,
@@ -63,23 +62,22 @@ const styles = StyleSheet.create({
         marginTop: 40,
     },
     headingContent: {
-        size: 22,
+        fontSize: 22,
         fontFamily: 'Montserrat_600SemiBold',
         textTransform: 'uppercase',
         marginTop: 30,
     },
     bodyContent: {
-        size: 16,
+        fontSize: 16,
         fontFamily: 'Montserrat_500Medium',
         textAlign: 'center',
         width: 300,
         marginTop: 10,
     },
     nextBtn: {
-        size: 16,
+        fontSize: 16,
         fontFamily: 'Montserrat_500Medium',
-        marginTop: 50,
-        marginLeft: 270,
-        color: 'rgba(39, 39, 39, 0.7)',
+        marginTop: 30,
+        marginLeft: 260,
     }
 });

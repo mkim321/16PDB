@@ -21,7 +21,7 @@ export const typeTheme = {
             marginBottom: 10,
         },
         style:{
-            color: themePalette.green,
+            color: themePalette.textGray,
             fontWeight: 'normal',
             fontFamily: 'Montserrat_500Medium'
         }
