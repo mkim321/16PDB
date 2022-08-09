@@ -16,35 +16,35 @@ export default function HomeScreen({ navigation }) {
                 value={text}
             />
                 <Text h2>Personality Group Types</Text>
-                <View style={styles.btngrid}>
-                    <View style={styles.row}>
+                    <View>
                         <TouchableOpacity style ={styles.imgbtn}
                         onPress={() => navigation.navigate('Analyst')}>
+                            <Text style={styles.title}>Analyst</Text>
                             <Image
                             style={styles.imagebtn}
                             source={require('../assets/card/home-analyst.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity style ={styles.imgbtn}
                         onPress={() => navigation.navigate('Diplomat')}>
+                            <Text style={styles.title}>Diplomat</Text>
                             <Image
                             style={styles.imagebtn}
                             source={require('../assets/card/home-diplomat.png')}/>
                         </TouchableOpacity>
-                    </View>
-                    <View style={styles.row}>
                         <TouchableOpacity style ={styles.imgbtn}
                         onPress={() => navigation.navigate('Sentinel')}>
+                            <Text style={styles.title}>Sentinel</Text>
                             <Image
                             style={styles.imagebtn}
                             source={require('../assets/card/home-sentinel.png')}/>
                         </TouchableOpacity>
                         <TouchableOpacity style ={styles.imgbtn}
                         onPress={() => navigation.navigate('Explorer')}>
+                            <Text style={styles.title}>Explorer</Text>
                             <Image
                             style={styles.imagebtn}
                             source={require('../assets/card/home-explorer.png')}/>
                         </TouchableOpacity>
-                    </View>
                 </View>
             <Text h2>Take The Test</Text>
             <TouchableOpacity
@@ -73,20 +73,24 @@ const styles = StyleSheet.create({
         marginTop:24,
         marginBottom: 36
     },
-    btngrid:{
-        // position:'absolute',
-        flex: 1,
-        flexWrap: 'wrap',
-    },
-    row:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'space-between',
-    },
     imgbtn:{        
-        width: 160,
-        height: 210,
-        marginBottom:20,
+        width: 340,
+        height: 100,
+        marginBottom:10,
+    },
+    imagebtn: {
+        width:340,
+        height: 100,
+        resizeMode: 'contain'
+    },
+    title:{
+        position:'absolute',
+        zIndex:10,
+        top:39,
+        left:32,
+        fontFamily: 'Montserrat_600SemiBold',
+        fontSize: 18,
+        color: '#272727'
     },
     btn: { 
         backgroundColor: '#D6E9E1',
@@ -100,8 +104,4 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat_500Medium',
         fontSize: 20
     },  
-    imagebtn: {
-        width:160,
-        height: 210
-    }
   });

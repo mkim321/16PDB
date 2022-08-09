@@ -91,8 +91,9 @@ function displayDataContainer(error, isLoaded, dataResult, navigation) {
         // show the data in the FlatList
         return(
             <FlatList
-            style={styles.btngrid}
-            numColumns={2}
+            style={{paddingHorizontal:0, overflow:'hidden'}}
+            contentContainerStyle={{paddingVertical: 0, paddingHorizontal: 0}}
+            //numColumns={2}
             data={dataResult.personality}
             renderItem={renderItem}
             keyExtractor={item => item.id}

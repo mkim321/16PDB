@@ -93,7 +93,7 @@ function displayDataContainer(error, isLoaded, dataResult, navigation) {
         return(
             <FlatList
             style={styles.btngrid}
-            numColumns={2}
+            //numColumns={2}
             data={dataResult.personality}
             renderItem={renderItem}
             keyExtractor={item => item.id}

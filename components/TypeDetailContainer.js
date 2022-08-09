@@ -15,14 +15,9 @@ export default function TypeDetailContainer({ currType, navigatorRef}){
         <ThemeProvider theme={typeTheme}>
             <View style={styles.container}>
                 <View style={styles.btngrid}>
-                    <View style={styles.imgcontainer}>
-                        <View style={styles.headingView}>
-                            <Text style={styles.title}>{currType.type}</Text>
-                        </View>
-                        <Image
-                        style={styles.imagebtn}
-                        source={{uri:currType.imgurl}}/>
-                    </View>
+                    <Image
+                    style={styles.imagebtn}
+                    source={{uri:currType.imgurl}}/>
                 </View>
                 <List.Section title="" style={styles.accordlist}>
                     <List.Accordion title="Introduction" style={styles.accordionbanner} titleStyle={styles.accordionbannertitle}>
@@ -73,27 +68,13 @@ const styles = StyleSheet.create({
         marginBottom: 36
     },
     btngrid:{
-        // position:'absolute',
-        flex: 1,
-        flexWrap: 'wrap',
+        flex:1,
+        alignItems:'flex-end'
     },
     imagebtn: {
-        width:160,
-        height: 210
-    },
-    imgcontainer:{
-        flex:1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        backgroundColor: 'transparent',
-        width:160,
-        height: 210,
-    },
-    headingView:{
-        position:'absolute',
-        zIndex:10,
-        width: 160,
-        top: 0, left: 0, right: 0, bottom: 0, justifyContent: 'center', alignItems: 'center'
+        width:292,
+        height:80,
+        // resizeMode:"contain"
     },
     title:{
         textAlign:'center',
@@ -105,7 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     accordionbanner:{
-        backgroundColor: '#CFBFD6',
+        backgroundColor: '#e7e7e7',
         borderRadius: 10,
         marginBottom: 10
     },
