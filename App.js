@@ -9,9 +9,13 @@ import { createNativeStackNavigator} from '@react-navigation/native-stack'
 import { useFonts } from 'expo-font';
 import { Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_800ExtraBold } from '@expo-google-fonts/montserrat';
 
-import HomeScreen from './screens/HomeScreen';
 import OnboardingScreen from './screens/OnboardingScreen';
-import TypeScreen from './screens/TypeScreen';
+import HomeScreen from './screens/HomeScreen';
+import AnalystScreen from './screens/AnalystScreen';
+import DiplomatScreen from './screens/DiplomatScreen';
+import SentinelScreen  from './screens/SentinelScreen';
+import ExplorerScreen from './screens/ExplorerScreen';
+import DetailScreen from './screens/TypeDetailScreen';
 
 
 
@@ -38,26 +42,46 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator 
-          initialRouteName="Onboarding" 
+          initialRouteName="home" 
           screenOptions={{
             headerTitleStyle: {
               fontWeight: 'normal',
               fontFamily: 'Montserrat_500Medium',
             }
           }}>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
             options={{ headerShown: false }}
-          />
+          /> */}
           <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{ headerShown: true }}
           />
           <Stack.Screen
-            name="Type"
-            component={TypeScreen}
+            name="Analyst"
+            component={AnalystScreen}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="Diplomat"
+            component={DiplomatScreen}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="Sentinel"
+            component={SentinelScreen}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="Explorer"
+            component={ExplorerScreen}
+            options={{ headerShown: true }}
+          />
+          <Stack.Screen
+            name="Detail"
+            component={DetailScreen}
             options={{ headerShown: true }}
           />
         </Stack.Navigator>
