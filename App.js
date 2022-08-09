@@ -10,12 +10,15 @@ import { useFonts } from 'expo-font';
 import { Montserrat_500Medium, Montserrat_600SemiBold, Montserrat_800ExtraBold } from '@expo-google-fonts/montserrat';
 
 import OnboardingScreen from './screens/OnboardingScreen';
+import OnboardingTwoScreen from './screens/OnboardingTwoScreen';
+import OnboardingThreeScreen from './screens/OnboardingThreeScreen';
 import HomeScreen from './screens/HomeScreen';
 import AnalystScreen from './screens/AnalystScreen';
 import DiplomatScreen from './screens/DiplomatScreen';
 import SentinelScreen  from './screens/SentinelScreen';
 import ExplorerScreen from './screens/ExplorerScreen';
 import DetailScreen from './screens/TypeDetailScreen';
+
 
 
 
@@ -42,18 +45,28 @@ export default function App() {
     <SafeAreaProvider>
       <NavigationContainer>
         <Stack.Navigator 
-          initialRouteName="home" 
+          initialRouteName="Onboarding" 
           screenOptions={{
             headerTitleStyle: {
               fontWeight: 'normal',
               fontFamily: 'Montserrat_500Medium',
             }
           }}>
-          {/* <Stack.Screen
+          <Stack.Screen
             name="Onboarding"
             component={OnboardingScreen}
             options={{ headerShown: false }}
-          /> */}
+          />
+          <Stack.Screen
+            name="OnboardingTwo"
+            component={OnboardingTwoScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="OnboardingThree"
+            component={OnboardingThreeScreen}
+            options={{ headerShown: false }}
+          />
           <Stack.Screen
             name="Home"
             component={HomeScreen}
