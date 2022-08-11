@@ -8,6 +8,29 @@ import { typeTheme } from "../themes/typeTheme";
 
 export default function OnboardingScreen({ navigation }) {
     return(
+        // <ThemeProvider theme={typeTheme}>
+        // <Onboarding
+        //     pages={[
+        //         {
+        //             backgroundColor: '#fff',
+        //             image: <Image source={require('../assets/images/onboard1.png')} />,
+        //             title: 'WELCOME TO 16PDB',
+        //             subtitle: 'All 16 personality traits at your fingertips, instantly searchable with React Native Onboarding Swiper',
+        //         },
+        //         {
+        //             backgroundColor: '#00FF00',
+        //             image: <Image source={require('../assets/images/onboard2.png')} />,
+        //             title: 'DIRECT SEARCH',
+        //             subtitle: 'Know the personality trait? Search directly and learn more about it!',
+        //         },
+        //         {
+        //             backgroundColor: '#fff',
+        //             image: <Image source={require('../assets/images/onboard3.png')} />,
+        //             title: 'BROWSE PERSONALITIES',
+        //             subtitle: 'Look through all 16 types, easily browsable in 4 different groups.',
+        //         },
+        //     ]}
+        // /></ThemeProvider>
         <ThemeProvider theme={typeTheme}>
             <View style={styles.container}>
                 <View style={styles.topBar}>

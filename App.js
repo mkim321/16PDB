@@ -20,6 +20,7 @@ import ExplorerScreen from './screens/ExplorerScreen';
 import DetailScreen from './screens/TypeDetailScreen';
 
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

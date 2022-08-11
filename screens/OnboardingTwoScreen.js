@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Montserrat_500Medium',
         marginTop: 50,
         marginLeft: 120,
+
     },
     mainImage: {
         aspectRatio: 1,
