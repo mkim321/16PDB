@@ -47,7 +47,7 @@ Presented in App Strategy 2, New Media Design and Web Development in British Col
 | Memeber                                        | Description                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
 | Misun Kim | <ul><li>Developed an android application for data exchange using fetch method</li><li>Developed an layout using React native nagvigation, React native elemtns and React native paper </li><li>Understanding custom API building process and manage to use for building functionality</li><li>Manage the issue with project board and solve it (tried to various library for building layout but found bugs and change it)</ul> |
-| Anita Lam | <ul><li></li></ul>|
+| Anita Lam | <ul><li>Created database for a live API</li><li>Setup the database and checked for connection and database processing in PHP using PDO</li><li>Added the model and controller for an endpoint to look up personality type from the database</li><li>Connected the database so that the API can be used live</li></ul>|
 | Julia Sun | <ul><li>How the functionality of the ui kit affects the design and the importance of incorporating the designer</li><li>the coding aspect in the beginning is important so that there’s less révisions</li></ul> |
 
 
