@@ -9,7 +9,7 @@ Presented in App Strategy 2, New Media Design and Web Development in British Col
 | Title                                       | Description                                           |
 | ------------------------------------------- | ----------------------------------------------------- |
 | Project Status | Ongoing – Add feature |
-| Project Type | Project Type |
+| Project Type | Term project / Group |
 | Project Duration | 3 Weeks (July 2022 - August 2022) |
 
 ## About
