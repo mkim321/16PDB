@@ -1,7 +1,4 @@
-
-
-
-## 16 PDB
+# 16 PDB
 
 Presented in App Strategy 2, New Media Design and Web Development in British Columbia Institute of Technology – Summer 2022 
 
