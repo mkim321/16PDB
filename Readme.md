@@ -25,7 +25,7 @@ Presented in App Strategy 2, New Media Design and Web Development in British Col
   
 |
 | **Objectives** |
-| <ul><li>Android Application using built React, JS, Custom API</li><li>Building custom API for data exchange</li><li>Working as a team by Agile metho</li></ul>|
+| <ul><li>Android Application using built React native, React, JS, Custom API</li><li>Building custom API for data exchange</li><li>Working as a team by Agile method</li></ul>|
 | **Configuration** |
 | <ul><li>Android Web</li><li>Google Pixel 3 API 33</li></ul> |
 | **Dependencies** |
